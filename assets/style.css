@@ -1,0 +1,26 @@
+#header {
+    width: 100%;
+    text-align: center;
+}
+
+#searchPanel {
+    float: left;
+}
+
+#mainPanel {
+    float: right;
+}
+
+#searchPanel,
+#searchClick
+{
+    width: 300px;
+}
+
+.dayPanel {
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: cadetblue;
+}
