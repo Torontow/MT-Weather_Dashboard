@@ -14,10 +14,14 @@
 #searchPanel,
 #searchClick
 {
-    width: 300px;
-}
+    background-color: lightblue;
 
+}
+#list {
+    margin: 10px;
+}
 .dayPanel {
+    float: left;
     width: 150px;
     border: 2px solid black;
     border-radius: 5px;

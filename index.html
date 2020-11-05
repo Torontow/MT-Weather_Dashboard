@@ -10,7 +10,30 @@
 </head>
 
 <body>
+    <header id="header"><h1>Weather Dashboard</h1></header>
     <div class="container-fluid" id="container"></div>
+    <div class="row">
+        <div class="col-2" id="searchPanel">
+            <h4>Search for a City:</h3>
+            <input class="form-control" type="text" placeholder="City"></input>
+            <div class="list-group" id="list">
+                <a href="#" class="list-group-item list-group-item-action">Vancouver</a>
+                <a href="#" class="list-group-item list-group-item-action">Winnipeg</a>
+                <a href="#" class="list-group-item list-group-item-action">Toronto</a>
+                <a href="#" class="list-group-item list-group-item-action">Montreal</a>
+                <a href="#" class="list-group-item list-group-item-action">Halifax</a>
+              </div>
+        </div>
+        <div class="col-10" id="mainPanel">
+            <h2>City</h2>
+            <div class="col-10" id="fiveDayPanel">
+            <h3>5-Day Forecast</h3>
+            <div id="daysPanel"></div>
+            </div>
+
+        </div>
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
