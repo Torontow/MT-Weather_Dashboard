@@ -1,30 +1,63 @@
+body {
+    background-color: rgb(60,155,235);
+}
+
+#container {
+    background-color:rgb(60,155,235);
+}
+
 #header {
     width: 100%;
+    padding: 15px;
+    color:whitesmoke;
     text-align: center;
+    background-color: rgb(51,88,122);
 }
 
 #searchPanel {
     float: left;
+    background-color: rgb(97,176,245);
+}
+#searchBtn {
+    color: black;
+}
+#searchInput {
+    margin: 10px;
 }
 
 #mainPanel {
     float: right;
+    background-color: rgb(223, 234, 243);
+    border-color: lightgray;
 }
 
+#cityPanel {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin:10px;
+    padding:15px;
+}
 #searchPanel,
 #searchClick
 {
-    background-color: lightblue;
+    background-color:rgb(176,182,189);
+    padding-left: 15px;
 
 }
 #list {
     margin: 10px;
+    background-color: rgb(62,97,143);
+}
+.list-group-item {
+    background-color: rgb(62,97,143);
 }
 .dayPanel {
     float: left;
     width: 150px;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
-    background-color: cadetblue;
+    padding:5px;
+    background-color: rgb(51,88,122);
+    color: whitesmoke;
 }
