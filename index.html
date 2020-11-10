@@ -21,30 +21,30 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="City">
                     <div class="input-group-append">
-                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <span class="input-group-text" id="searchBtn"><i class="fas fa-search"></i></span>
                     </div>
                 </div>
                 <ul class="list-group" id="list">
-                    <a href="#" class="list-group-item list-group-item-action">Vancouver</a>
-                    <a href="#" class="list-group-item list-group-item-action">Winnipeg</a>
-                    <a href="#" class="list-group-item list-group-item-action">Toronto</a>
-                    <a href="#" class="list-group-item list-group-item-action">Montreal</a>
-                    <a href="#" class="list-group-item list-group-item-action">Halifax</a>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="Vancouver">Vancouver</li>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="Winnipeg">Winnipeg</li>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="Toronto">Toronto</li>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="Montreal">Montreal</li>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="Halifax">Halifax</li>
                 </ul>
                 <ul class="list-group" id="list">
-                    <a href="#" class="list-group-item list-group-item-action">Nairobi</a>
-                    <a href="#" class="list-group-item list-group-item-action">Moscow</a>
-                    <a href="#" class="list-group-item list-group-item-action">Toronto</a>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="London">London</li>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="Moscow">Moscow</li>
+                    <li href="#" class="list-group-item list-group-item-action cityBtn" id="Tokyo">Tokyo</li>
                 </ul>
 
         </div>
         <div class="col-10" id="mainPanel">
             <div class="container-fluid" id="cityPanel">
-                <h2>City</h2>
-                <p id="main-temp">Temperature</p>
-                <p id="main-hum">Humidity</p>
-                <p id="main-wind">Wind Speed</p>
-                <p id="main-uv">Badge</p>
+                <h2 id="cityName">City</h2>
+                <p>Temperature: <span id="main-temp"></span>&#176C</p>
+                <p>Humidity: <span id="main-hum"></span>%</p>
+                <p>Wind Speed: <span id="main-wind"></span>km/h</p>
+                <p>UV Index: <span id="main-uv"></span></p>
             </div>
             <div class="col-10" id="fiveDayPanel">
                 <h3>5-Day Forecast</h3>
