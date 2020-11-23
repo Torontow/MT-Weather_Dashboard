@@ -56,6 +56,7 @@ $(document).ready(function () {
                 .then(function (userForecastResponse) {
                     return userForecastResponse.json();
                 }).then(function (userLocationForecastData) {
+                    
                     let userForecastData = userLocationForecastData;
                     let userForecastArray = [];
 
@@ -63,8 +64,8 @@ $(document).ready(function () {
                         let userForecastObject = {};
                         let userForecastDataDate = userForecastData.list[i].dt_txt;
                         let userForecastDate = new Date(userForecastDataDate).toLocaleDateString("en-US");
-                        let userForecastTemp = userForecastData.list[i].main.temp;
-                        let userForecastHumidity = userForecastData.list[i].humidity;
+                        let userForecastTemp = Math.floor(userForecastData.list[i].main.temp);
+                        let userForecastHumidity = userForecastData.list[i].main.humidity;
                         let userForecastIcon = userForecastData.list[i].weather[0].icon;
 
                         userForecastObject['list'] = {};
@@ -76,13 +77,14 @@ $(document).ready(function () {
                         userForecastArray.push(userForecastObject);
 
                     }
-                    
+                    console.log(userForecastArray);
                     for (let j = 0; j < 5; j++) {
                         let userForecastArrayDate = userForecastArray[j].list.date;
                         let userForecastIconURL = getWeatherIcon + userForecastArray[j].list.icon + ".png";
                         let userForecastArrayTemp = userForecastArray[j].list.temp;
                         let userForecastArrayHumidity = userForecastArray[j].list.humidity;
-                        
+                        console.log(userForecastIconURL);
+
                         $("#date-" + j).text(userForecastArrayDate);
                         $("#temp-" + j).text(userForecastArrayTemp);
                         $("#icon-" + j).attr("src",userForecastIconURL);
