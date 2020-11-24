@@ -25,6 +25,7 @@ $(document).ready(function () {
     function init() {
         userWeatherUrl();
         search();
+        clearHistory();
     }
 
     function search() {
@@ -305,7 +306,7 @@ $(document).ready(function () {
         var localSearchHistory = JSON.parse(getLocalSearchHistory);
     
         if (getLocalSearchHistory === null) {
-        //   createHistory();
+          createHistory();
           getLocalSearchHistory = localStorage.getItem('searchHistory');
           localSearchHistory = JSON.parse(getLocalSearchHistory);
         }
@@ -317,8 +318,19 @@ $(document).ready(function () {
           $('#search-history').prepend(historyLi);
         }
         return (searchHistoryArr = localSearchHistory);
+    }
+    function createHistory() {
+        searchHistoryArr.length = 0;
+        localStorage.setItem('searchHistory', JSON.stringify(searchHistoryArr));
       }
-
+    function clearHistory() {
+        $('#clear-button').on('click', function() {
+          $('#search-history').empty();
+        //   $('#search-history-container').hide();
+          localStorage.removeItem('searchHistory');
+        //   createHistory();
+        });
+      }
 
 
 
