@@ -1,5 +1,6 @@
 body {
     background-color: rgb(60,155,235);
+    background-image: url("pexels-elia-clerici-912110.jpg");
 }
 
 #container {
@@ -9,17 +10,18 @@ body {
 #header {
     width: 100%;
     padding: 15px;
-    color:whitesmoke;
+    color:rgb(254, 233, 83);
     text-align: center;
-    background-color: rgb(51,88,122);
 }
 
 #searchPanel {
     float: left;
     background-color: rgb(97,176,245);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 #searchBtn {
-    color: black;
+    color: rgb(254, 233, 83);
 }
 #searchInput {
     margin: 10px;
@@ -37,6 +39,11 @@ body {
     margin:10px;
     padding:15px;
 }
+
+#clear-button {
+    margin-top: 10px;
+}
+
 #searchPanel,
 #searchClick
 {

@@ -15,10 +15,11 @@
     <header id="header">
         <h1>Weather Dashboard</h1>
     </header>
+    <!--Search Panel-->
     <div class="container" id="container"></div>
     <div class="row">
-        <div class="container col-2" id="searchPanel">
-            <h4>Search:</h4>
+        <div class="col-2" id="searchPanel">
+            <h5>Search</h5>
             <div class="container input-group mb-3">
                 <input type="text" class="form-control" id="search-input" placeholder="City" />
                 <div class="input-group-append">
@@ -30,8 +31,8 @@
             <div class="container">
                 <ul class="list-group" id="search-history">
                 </ul>
+                <button type="button" class="btn btn-secondary btn-sm" id="clear-button">Clear History</button>
             </div>
-            <button type="button" class="btn btn-secondary btn-sm" id="clear-button">Clear History</button>
         </div>
         <div class="col-10" id="mainPanel">
             <!--Main Panel-->
@@ -43,7 +44,7 @@
                     <p>Wind Speed: <span id="main-wind"></span>km/h</p>
                     <p>UV Index: <span class="badge badge-pill uvIndex-badge" id="main-uv"></span></p>
                 </div>
-                <div class="container col-4">
+                <div class="container col-2" style="float: left">
                     <img id="main-icon"></img>
                 </div>
             </div>
