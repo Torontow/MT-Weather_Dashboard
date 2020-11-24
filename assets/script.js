@@ -12,12 +12,15 @@ const cityHum = $("#main-hum");
 const cityWind = $("#main-wind");
 const cityUv = $("#main-uv");
 const cityIcon = $("#main-icon");
+const searchHistory = $("search-history");
+var searchHistoryArr = [];
 var citySearch;
 
 
 $(document).ready(function () {
 
     init();
+    displayHistory();
 
     function init() {
         userWeatherUrl();
@@ -60,6 +63,7 @@ $(document).ready(function () {
                 cityWind.text(searchCityWind);
                 cityIcon.attr("src", searchCityIconURL);
 
+                searchHistory(searchCityName);
 
                 // Displays searched city current UV index in main panel
                 let searchLat = searchWeatherData.coord.lat;
@@ -133,11 +137,6 @@ $(document).ready(function () {
 
 
             });
-
-
-
-
-
     }
 
     // Displays weather for user's location
@@ -264,8 +263,61 @@ $(document).ready(function () {
 
     }
 
+    function searchHistory(searchCityName) {
+        var searchHistoryObj = {};
 
+        if (searchHistoryArr.length === 0) {
+            searchHistoryObj['city'] = searchCityName;
+            searchHistoryArr.push(searchHistoryObj);
+            localStorage.setItem('searchHistory', JSON.stringify(searchHistoryArr));
+        } else {
+            var checkHistory = searchHistoryArr.find(
+                ({ city }) => city === searchCityName
+            );
 
+            if (searchHistoryArr.length < 5) {
+                if (checkHistory === undefined) {
+                    searchHistoryObj['city'] = searchCityName;
+                    searchHistoryArr.push(searchHistoryObj);
+                    localStorage.setItem(
+                        'searchHistory',
+                        JSON.stringify(searchHistoryArr)
+                    );
+                }
+            } else {
+                if (checkHistory === undefined) {
+                    searchHistoryArr.shift();
+                    searchHistoryObj['city'] = searchCityName;
+                    searchHistoryArr.push(searchHistoryObj);
+                    localStorage.setItem(
+                        'searchHistory',
+                        JSON.stringify(searchHistoryArr)
+                    );
+                }
+            }
+        }
+        $('#search-history').empty();
+        displayHistory();
+    }
+
+    function displayHistory() {
+        var getLocalSearchHistory = localStorage.getItem('searchHistory');
+        var localSearchHistory = JSON.parse(getLocalSearchHistory);
+    
+        if (getLocalSearchHistory === null) {
+        //   createHistory();
+          getLocalSearchHistory = localStorage.getItem('searchHistory');
+          localSearchHistory = JSON.parse(getLocalSearchHistory);
+        }
+    
+        for (var i = 0; i < localSearchHistory.length; i++) {
+          var historyLi = $('<li>');
+          historyLi.addClass('list-group-item');
+          historyLi.text(localSearchHistory[i].city);
+          $('#search-history').prepend(historyLi);
+        }
+        return (searchHistoryArr = localSearchHistory);
+      }
 
 
 
